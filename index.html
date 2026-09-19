@@ -508,7 +508,7 @@
           </div>
 
           <div class="voice-sample-list" aria-label="Published Ordio voice samples">
-            <button class="voice-sample is-active" type="button" data-demo-sample data-title="Welcome to Ordio" data-meta="Official Ordio introduction sample">
+            <button class="voice-sample is-active" type="button" aria-pressed="true" data-demo-sample data-title="Welcome to Ordio" data-meta="Official Ordio introduction sample">
               <span class="voice-sample-index">01</span>
               <span class="voice-sample-copy">
                 <strong>Welcome to Ordio</strong>
@@ -517,7 +517,7 @@
               <span class="voice-sample-arrow" aria-hidden="true">↗</span>
             </button>
 
-            <button class="voice-sample" type="button" data-demo-sample data-title="Sample Male Voice 1" data-meta="Published male voice talent sample">
+            <button class="voice-sample" type="button" aria-pressed="false" data-demo-sample data-title="Sample Male Voice 1" data-meta="Published male voice talent sample">
               <span class="voice-sample-index">02</span>
               <span class="voice-sample-copy">
                 <strong>Male Voice 1</strong>
@@ -526,7 +526,7 @@
               <span class="voice-sample-arrow" aria-hidden="true">↗</span>
             </button>
 
-            <button class="voice-sample" type="button" data-demo-sample data-title="Sample Female Voice 1" data-meta="Published female voice talent sample">
+            <button class="voice-sample" type="button" aria-pressed="false" data-demo-sample data-title="Sample Female Voice 1" data-meta="Published female voice talent sample">
               <span class="voice-sample-index">03</span>
               <span class="voice-sample-copy">
                 <strong>Female Voice 1</strong>
@@ -535,7 +535,7 @@
               <span class="voice-sample-arrow" aria-hidden="true">↗</span>
             </button>
 
-            <button class="voice-sample" type="button" data-demo-sample data-title="Harley-Davidson Dealer Example" data-meta="Published commercial caller-experience example">
+            <button class="voice-sample" type="button" aria-pressed="false" data-demo-sample data-title="Harley-Davidson Dealer Example" data-meta="Published commercial caller-experience example">
               <span class="voice-sample-index">04</span>
               <span class="voice-sample-copy">
                 <strong>Harley-Davidson Dealer</strong>
@@ -959,7 +959,7 @@
             <p>Four details to get the conversation started.</p>
           </div>
 
-          <form class="request-demo-form" data-demo-form novalidate>
+          <form class="request-demo-form" data-demo-form novalidate aria-describedby="demo-form-note demo-form-status">
             <div class="form-grid">
               <div class="form-field">
                 <label for="demo-name">Your name</label>
@@ -992,10 +992,10 @@
               <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4"></path></svg>
             </button>
 
-            <p class="request-demo-note">
+            <p class="request-demo-note" id="demo-form-note">
               Submitting opens an email to Ordio with your details so no information is silently sent from this static demo.
             </p>
-            <p class="form-status" data-form-status aria-live="polite"></p>
+            <p class="form-status" id="demo-form-status" data-form-status aria-live="polite"></p>
           </form>
         </div>
       </div>
@@ -1019,10 +1019,12 @@
         <a href="#customers">Customers</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <div class="footer-contact">
-        <p>1300 067 346</p>
-        <p>info@ordio.au</p>
-        <p>10 Prior Avenue, Seaton, South Australia 5023</p>
+      <div class="footer-contact" aria-label="Ordio contact details">
+        <a href="tel:1300067346">1300 067 346</a>
+        <a href="mailto:info@ordio.au">info@ordio.au</a>
+        <a href="https://maps.app.goo.gl/J7AWmNZumrSSnt2R8" target="_blank" rel="noopener noreferrer">
+          10 Prior Avenue, Seaton, South Australia 5023
+        </a>
       </div>
     </div>
     <div class="container footer-bottom">
