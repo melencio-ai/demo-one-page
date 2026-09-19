@@ -2798,6 +2798,230 @@ img { max-width: 100%; display: block; }
   }
 }
 
+
+/* FAQ */
+.faq-section {
+  position: relative;
+  overflow: hidden;
+  padding: 132px 0 124px;
+  background:
+    radial-gradient(circle at 92% 20%, rgba(36,201,214,.07), transparent 28rem),
+    var(--color-offwhite);
+  color: var(--color-navy-950);
+  scroll-margin-top: 80px;
+}
+
+.faq-section::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  right: -320px;
+  top: 80px;
+  border: 1px solid rgba(36,201,214,.11);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.faq-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(320px, .72fr) minmax(0, 1.28fr);
+  align-items: start;
+  gap: clamp(64px, 9vw, 130px);
+}
+
+.faq-intro {
+  position: sticky;
+  top: 118px;
+}
+
+.faq-intro h2 {
+  max-width: 520px;
+  margin: 0;
+  font-size: clamp(2.65rem, 4.4vw, 4rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -.046em;
+}
+
+.faq-intro > p:not(.eyebrow) {
+  max-width: 510px;
+  margin: 28px 0 30px;
+  color: #536574;
+  font-size: 16px;
+  line-height: 1.72;
+}
+
+.faq-list {
+  border-top: 1px solid rgba(7,17,31,.11);
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(7,17,31,.11);
+}
+
+.faq-item h3 {
+  margin: 0;
+}
+
+.faq-question {
+  width: 100%;
+  min-height: 92px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 40px;
+  align-items: center;
+  gap: 24px;
+  padding: 25px 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-navy-950);
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-question > span:first-child {
+  font-size: clamp(1.1rem, 1.35vw, 1.25rem);
+  font-weight: 700;
+  line-height: 1.38;
+  letter-spacing: -.02em;
+}
+
+.faq-toggle-icon {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  justify-self: end;
+  border: 1px solid rgba(7,17,31,.12);
+  border-radius: 50%;
+  background: rgba(255,255,255,.55);
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.faq-toggle-icon::before,
+.faq-toggle-icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 13px;
+  height: 1.5px;
+  border-radius: 999px;
+  background: var(--color-navy-950);
+  transform: translate(-50%, -50%);
+  transition: transform 180ms var(--ease-standard);
+}
+
+.faq-toggle-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.faq-question[aria-expanded="true"] .faq-toggle-icon {
+  border-color: rgba(36,201,214,.35);
+  background: rgba(36,201,214,.08);
+}
+
+.faq-question[aria-expanded="true"] .faq-toggle-icon::after {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.faq-question:hover .faq-toggle-icon {
+  border-color: rgba(36,201,214,.38);
+}
+
+.faq-answer {
+  max-width: 760px;
+  padding: 0 70px 28px 0;
+}
+
+.faq-answer[hidden] {
+  display: none;
+}
+
+.faq-answer p {
+  margin: 0;
+  color: #5D6D79;
+  font-size: 16px;
+  line-height: 1.72;
+}
+
+@media (max-width: 1050px) {
+  .faq-section {
+    padding: 106px 0 98px;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 52px;
+  }
+
+  .faq-intro {
+    position: static;
+    max-width: 760px;
+  }
+
+  .faq-intro h2 {
+    max-width: 680px;
+  }
+
+  .faq-intro > p:not(.eyebrow) {
+    max-width: 650px;
+  }
+
+  .faq-list {
+    max-width: 850px;
+  }
+}
+
+@media (max-width: 640px) {
+  .faq-section {
+    padding: 82px 0 76px;
+  }
+
+  .faq-grid {
+    gap: 38px;
+  }
+
+  .faq-intro h2 {
+    font-size: clamp(2.25rem, 10.8vw, 3.15rem);
+    line-height: 1.04;
+  }
+
+  .faq-intro > p:not(.eyebrow) {
+    margin: 22px 0 26px;
+    font-size: 16px;
+  }
+
+  .faq-question {
+    min-height: 82px;
+    grid-template-columns: minmax(0, 1fr) 36px;
+    gap: 16px;
+    padding: 22px 0;
+  }
+
+  .faq-question > span:first-child {
+    font-size: 17px;
+    line-height: 1.42;
+  }
+
+  .faq-toggle-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .faq-answer {
+    padding: 0 50px 24px 0;
+  }
+
+  .faq-answer p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
+
 .stage-anchor {
   min-height: 1px;
   scroll-margin-top: 80px;
