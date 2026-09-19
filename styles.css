@@ -237,12 +237,12 @@ img { max-width: 100%; display: block; }
 /* Hero */
 .hero {
   position: relative;
-  min-height: 100svh;
+  min-height: clamp(760px, 92svh, 920px);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 142px 0 34px;
+  padding: 124px 0 34px;
   background:
     radial-gradient(circle at 85% 28%, rgba(36,201,214,.13), transparent 31rem),
     radial-gradient(circle at 44% 8%, rgba(247,214,56,.055), transparent 26rem),
