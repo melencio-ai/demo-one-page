@@ -3705,11 +3705,19 @@ img { max-width: 100%; display: block; }
   gap: 12px;
 }
 
-.footer-contact p {
+.footer-contact a,
+.footer-contact address {
+  width: fit-content;
   margin: 0;
   color: rgba(255,255,255,.74);
   font-size: 13px;
+  font-style: normal;
   line-height: 1.6;
+  transition: color var(--duration-fast) ease;
+}
+
+.footer-contact a:hover {
+  color: var(--color-yellow-400);
 }
 
 .footer-bottom {
