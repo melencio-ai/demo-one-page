@@ -162,7 +162,7 @@ demoForm?.addEventListener("submit", (event) => {
     "What we'd like to improve:",
     note || "Not specified",
     "",
-    "Sent from the Ordio one-page website demo."
+    "Sent from the Ordio website."
   ].join("\n");
 
   demoFormStatus.textContent = "Opening your email app with the demo request…";
