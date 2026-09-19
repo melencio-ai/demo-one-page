@@ -112,3 +112,60 @@ faqToggles.forEach((toggle) => {
     }
   });
 });
+
+
+const demoForm = document.querySelector("[data-demo-form]");
+const demoFormStatus = document.querySelector("[data-form-status]");
+
+demoForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const requiredFields = [...demoForm.querySelectorAll("[required]")];
+  let firstInvalid = null;
+
+  requiredFields.forEach((field) => {
+    const invalid = !field.checkValidity();
+    field.classList.toggle("is-invalid", invalid);
+    if (invalid && !firstInvalid) firstInvalid = field;
+  });
+
+  if (firstInvalid) {
+    demoFormStatus.textContent = "Please complete the required fields.";
+    firstInvalid.focus();
+    return;
+  }
+
+  const data = new FormData(demoForm);
+  const name = String(data.get("name") || "").trim();
+  const company = String(data.get("company") || "").trim();
+  const email = String(data.get("email") || "").trim();
+  const phone = String(data.get("phone") || "").trim();
+  const note = String(data.get("note") || "").trim();
+
+  const subject = `Free demo request — ${company}`;
+  const body = [
+    "Hi Ordio,",
+    "",
+    "I'd like to request a free caller-experience demo.",
+    "",
+    `Name: ${name}`,
+    `Company: ${company}`,
+    `Email: ${email}`,
+    `Phone: ${phone}`,
+    "",
+    "What we'd like to improve:",
+    note || "Not specified",
+    "",
+    "Sent from the Ordio one-page website demo."
+  ].join("\n");
+
+  demoFormStatus.textContent = "Opening your email app with the demo request…";
+  window.location.href =
+    `mailto:info@ordio.au?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
+
+demoForm?.querySelectorAll("input, textarea").forEach((field) => {
+  field.addEventListener("input", () => {
+    if (field.checkValidity()) field.classList.remove("is-invalid");
+  });
+});
