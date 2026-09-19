@@ -4117,3 +4117,134 @@ img { max-width: 100%; display: block; }
     transition-duration: .01ms !important;
   }
 }
+
+
+/* Tablet portrait refinement */
+@media (min-width: 641px) and (max-width: 900px) {
+  .hero {
+    padding-top: 108px;
+    padding-bottom: 28px;
+  }
+
+  .hero-copy {
+    padding-block: 28px 0;
+  }
+
+  .hero-visual {
+    min-height: 500px;
+    margin-top: 6px;
+  }
+
+  .hero-photo {
+    width: min(78%, 500px);
+  }
+
+  .audio-card {
+    left: 8%;
+    bottom: 50px;
+    width: min(390px, 76%);
+  }
+
+  .hero-badge {
+    top: 36px;
+    right: 8%;
+  }
+
+  .hero-footnote {
+    margin-top: 4px;
+  }
+
+  .trusted-brands {
+    padding: 32px 0 36px;
+  }
+
+  .logo-tile {
+    min-height: 84px;
+    padding-block: 20px;
+  }
+
+  .caller-problem {
+    padding: 90px 0 94px;
+  }
+
+  .caller-problem-grid {
+    gap: 44px;
+  }
+
+  .solutions-section {
+    padding: 96px 0 92px;
+  }
+
+  .solutions-grid {
+    margin-top: 50px;
+  }
+
+  .why-ordio {
+    padding: 94px 0 88px;
+  }
+
+  .why-ordio-list {
+    margin-top: 48px;
+  }
+
+  .why-row {
+    min-height: 148px;
+  }
+
+  .voice-demo {
+    padding: 94px 0;
+  }
+
+  .voice-demo-grid {
+    gap: 42px;
+  }
+
+  .process-section {
+    padding: 94px 0 88px;
+  }
+
+  .process-timeline {
+    margin-top: 48px;
+  }
+
+  .customer-results {
+    padding: 94px 0 88px;
+  }
+
+  .customer-stories {
+    margin-top: 50px;
+  }
+
+  .about-ordio {
+    padding: 94px 0;
+  }
+
+  .about-ordio-grid {
+    gap: 46px;
+  }
+
+  .about-ordio-photo {
+    width: min(82%, 540px);
+  }
+
+  .faq-section {
+    padding: 94px 0 88px;
+  }
+
+  .faq-grid {
+    gap: 42px;
+  }
+
+  .request-demo {
+    padding: 96px 0 90px;
+  }
+
+  .request-demo-grid {
+    gap: 48px;
+  }
+
+  .site-footer {
+    padding-top: 56px;
+  }
+}
+
