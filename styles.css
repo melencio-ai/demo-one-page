@@ -677,6 +677,268 @@ img { max-width: 100%; display: block; }
   }
 }
 
+
+/* Caller experience problem */
+.caller-problem {
+  position: relative;
+  overflow: hidden;
+  padding: 132px 0 144px;
+  background:
+    radial-gradient(circle at 88% 76%, rgba(36,201,214,.08), transparent 24rem),
+    var(--color-offwhite);
+  color: var(--color-navy-950);
+}
+
+.caller-problem::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  right: -250px;
+  bottom: -190px;
+  border: 1px solid rgba(36,201,214,.13);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.caller-problem-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, .88fr) minmax(480px, 1.12fr);
+  align-items: start;
+  gap: clamp(64px, 9vw, 130px);
+}
+
+.eyebrow--dark {
+  color: var(--color-cyan-600, #159DAA);
+}
+
+.caller-problem h2 {
+  max-width: 650px;
+  margin: 0;
+  font-size: clamp(2.65rem, 4.4vw, 4rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -.048em;
+}
+
+.caller-problem-body {
+  max-width: 610px;
+  margin-top: 34px;
+  display: grid;
+  gap: 18px;
+}
+
+.caller-problem-body p {
+  margin: 0;
+  color: #536574;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.caller-problem-close {
+  max-width: 590px;
+  margin: 34px 0 0;
+  padding-top: 30px;
+  border-top: 1px solid rgba(7,17,31,.11);
+  color: #40515F;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.caller-problem-close strong {
+  color: var(--color-navy-950);
+  font-weight: 700;
+}
+
+.call-journey {
+  position: relative;
+  display: grid;
+  gap: 0;
+  padding: 8px 0;
+}
+
+.journey-line {
+  position: absolute;
+  top: 43px;
+  bottom: 43px;
+  left: 27px;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    rgba(7,17,31,.13),
+    rgba(7,17,31,.13) 66%,
+    rgba(36,201,214,.42)
+  );
+}
+
+.journey-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 22px;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(7,17,31,.09);
+}
+
+.journey-step:last-child {
+  border-bottom: 0;
+}
+
+.journey-icon {
+  position: relative;
+  z-index: 2;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(7,17,31,.12);
+  background: var(--color-offwhite);
+  color: #788896;
+}
+
+.journey-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.journey-label {
+  display: block;
+  margin: 1px 0 8px;
+  color: #788896;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: .13em;
+}
+
+.journey-step h3 {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.22;
+  letter-spacing: -.02em;
+}
+
+.journey-step p {
+  max-width: 520px;
+  margin: 8px 0 0;
+  color: #61717E;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.journey-step--opportunity {
+  margin-top: 4px;
+}
+
+.journey-step--opportunity .journey-icon {
+  border-color: rgba(36,201,214,.34);
+  background: rgba(36,201,214,.08);
+  color: #159DAA;
+  box-shadow: 0 0 0 7px rgba(36,201,214,.045);
+}
+
+.journey-step--opportunity .journey-label {
+  color: #159DAA;
+}
+
+.journey-step--opportunity h3 {
+  color: var(--color-navy-950);
+}
+
+@media (max-width: 1050px) {
+  .caller-problem {
+    padding: 104px 0 112px;
+  }
+
+  .caller-problem-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .caller-problem-copy {
+    max-width: 760px;
+  }
+
+  .caller-problem h2 {
+    max-width: 760px;
+  }
+
+  .caller-problem-body,
+  .caller-problem-close {
+    max-width: 680px;
+  }
+
+  .call-journey {
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 640px) {
+  .caller-problem {
+    padding: 78px 0 82px;
+  }
+
+  .caller-problem-grid {
+    gap: 46px;
+  }
+
+  .caller-problem h2 {
+    font-size: clamp(2.25rem, 10.8vw, 3.15rem);
+    line-height: 1.04;
+  }
+
+  .caller-problem-body {
+    margin-top: 26px;
+    gap: 16px;
+  }
+
+  .caller-problem-body p,
+  .caller-problem-close {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .caller-problem-close {
+    margin-top: 26px;
+    padding-top: 24px;
+  }
+
+  .journey-line {
+    left: 23px;
+    top: 39px;
+    bottom: 39px;
+  }
+
+  .journey-step {
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    padding: 24px 0;
+  }
+
+  .journey-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .journey-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .journey-step h3 {
+    font-size: 19px;
+  }
+}
+
 .stage-anchor {
   min-height: 1px;
   scroll-margin-top: 80px;
