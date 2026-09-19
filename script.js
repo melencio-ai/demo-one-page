@@ -84,8 +84,12 @@ const demoMeta = document.querySelector("[data-demo-meta]");
 
 demoSamples.forEach((sample) => {
   sample.addEventListener("click", () => {
-    demoSamples.forEach((item) => item.classList.remove("is-active"));
+    demoSamples.forEach((item) => {
+      item.classList.remove("is-active");
+      item.setAttribute("aria-pressed", "false");
+    });
     sample.classList.add("is-active");
+    sample.setAttribute("aria-pressed", "true");
 
     if (demoTitle) demoTitle.textContent = sample.dataset.title || "";
     if (demoMeta) demoMeta.textContent = sample.dataset.meta || "";
