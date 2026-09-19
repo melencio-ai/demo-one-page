@@ -10,14 +10,22 @@ server {
   }
 
   location = / {
-    return 302 /one-page-demo/;
+    return 302 /ordio/;
+  }
+
+  location = /one-page-demo {
+    return 301 /ordio/;
   }
 
   location /one-page-demo/ {
-    try_files $uri $uri/ /one-page-demo/index.html;
+    return 301 /ordio/;
   }
 
-  location ~* ^/one-page-demo/.*\.(css|js|png|jpg|jpeg|gif|svg|webp|ico|woff|woff2)$ {
+  location /ordio/ {
+    try_files $uri $uri/ /ordio/index.html;
+  }
+
+  location ~* ^/ordio/.*\.(css|js|png|jpg|jpeg|gif|svg|webp|ico|woff|woff2)$ {
     expires 1h;
     add_header Cache-Control "public, max-age=3600";
     try_files $uri =404;
