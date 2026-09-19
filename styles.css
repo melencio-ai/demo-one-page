@@ -199,28 +199,42 @@ img { max-width: 100%; display: block; }
 }
 
 .menu-toggle {
+  position: relative;
   width: 44px;
   height: 44px;
+  flex: 0 0 44px;
   display: none;
-  place-items: center;
-  gap: 5px;
   padding: 0;
-  border: 1px solid var(--border-dark);
+  border: 1px solid rgba(255,255,255,.18);
   border-radius: 12px;
-  background: rgba(255,255,255,.03);
-  color: var(--text-on-dark);
+  background: rgba(255,255,255,.06);
+  color: var(--color-white);
   cursor: pointer;
+  overflow: hidden;
 }
 .menu-toggle span {
+  position: absolute;
+  left: 12px;
   width: 18px;
   height: 2px;
   display: block;
   background: currentColor;
   border-radius: 999px;
-  transition: transform 180ms var(--ease-standard);
+  transform-origin: center;
+  transition:
+    top 180ms var(--ease-standard),
+    transform 180ms var(--ease-standard);
 }
-.menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.5px) rotate(45deg); }
-.menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+.menu-toggle span:first-child { top: 16px; }
+.menu-toggle span:last-child { top: 24px; }
+.menu-toggle[aria-expanded="true"] span:first-child {
+  top: 21px;
+  transform: rotate(45deg);
+}
+.menu-toggle[aria-expanded="true"] span:last-child {
+  top: 21px;
+  transform: rotate(-45deg);
+}
 
 .mobile-menu {
   position: fixed;
@@ -3813,7 +3827,13 @@ img { max-width: 100%; display: block; }
   .desktop-nav,
   .header-cta { display: none; }
   .header-inner { grid-template-columns: 1fr auto; }
-  .menu-toggle { display: grid; }
+  .header-actions { justify-self: end; }
+  .menu-toggle {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    z-index: 2;
+  }
 
   .hero {
     min-height: auto;
