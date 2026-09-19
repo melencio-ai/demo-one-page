@@ -89,3 +89,26 @@ demoSamples.forEach((sample) => {
     if (demoMeta) demoMeta.textContent = sample.dataset.meta || "";
   });
 });
+
+
+const faqToggles = [...document.querySelectorAll("[data-faq-toggle]")];
+
+faqToggles.forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    const answerId = toggle.getAttribute("aria-controls");
+    const answer = answerId ? document.getElementById(answerId) : null;
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+
+    faqToggles.forEach((otherToggle) => {
+      const otherId = otherToggle.getAttribute("aria-controls");
+      const otherAnswer = otherId ? document.getElementById(otherId) : null;
+      otherToggle.setAttribute("aria-expanded", "false");
+      if (otherAnswer) otherAnswer.hidden = true;
+    });
+
+    if (!isOpen) {
+      toggle.setAttribute("aria-expanded", "true");
+      if (answer) answer.hidden = false;
+    }
+  });
+});
