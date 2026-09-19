@@ -74,3 +74,18 @@ if ("IntersectionObserver" in window && sections.length) {
 window.addEventListener("resize", () => {
   if (window.innerWidth > 1050) closeMenu();
 });
+
+
+const demoSamples = [...document.querySelectorAll("[data-demo-sample]")];
+const demoTitle = document.querySelector("[data-demo-title]");
+const demoMeta = document.querySelector("[data-demo-meta]");
+
+demoSamples.forEach((sample) => {
+  sample.addEventListener("click", () => {
+    demoSamples.forEach((item) => item.classList.remove("is-active"));
+    sample.classList.add("is-active");
+
+    if (demoTitle) demoTitle.textContent = sample.dataset.title || "";
+    if (demoMeta) demoMeta.textContent = sample.dataset.meta || "";
+  });
+});
