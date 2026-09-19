@@ -237,9 +237,12 @@ img { max-width: 100%; display: block; }
 }
 
 .mobile-menu {
-  position: fixed;
-  inset: 68px 0 0 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
   z-index: 120;
+  height: calc(100dvh - 68px);
   overflow-y: auto;
   overscroll-behavior: contain;
   background: var(--color-navy-950);
@@ -253,7 +256,7 @@ img { max-width: 100%; display: block; }
 .mobile-nav {
   display: grid;
   gap: 4px;
-  min-height: calc(100dvh - 68px);
+  min-height: 100%;
   align-content: start;
   padding-block: 28px 40px;
 }
@@ -4098,11 +4101,11 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 640px) {
   .mobile-menu {
-    inset: 64px 0 0;
+    height: calc(100dvh - 64px);
   }
 
   .mobile-nav {
-    min-height: calc(100dvh - 64px);
+    min-height: 100%;
     padding-block: 20px 32px;
   }
 
