@@ -25,6 +25,8 @@ const openMenu = () => {
   document.body.classList.add("menu-open");
 };
 
+closeMenu();
+
 menuToggle?.addEventListener("click", () => {
   const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
   isOpen ? closeMenu() : openMenu();
