@@ -1170,6 +1170,268 @@ img { max-width: 100%; display: block; }
   }
 }
 
+
+/* Why Ordio */
+.why-ordio {
+  position: relative;
+  overflow: hidden;
+  padding: 132px 0 118px;
+  background:
+    radial-gradient(circle at 100% 24%, rgba(247,214,56,.06), transparent 26rem),
+    var(--color-navy-850);
+  scroll-margin-top: 80px;
+}
+
+.why-ordio::after {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  right: -310px;
+  top: 90px;
+  border: 1px solid rgba(36,201,214,.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.why-ordio-header {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(340px, .65fr);
+  align-items: end;
+  gap: clamp(48px, 8vw, 110px);
+}
+
+.why-ordio-header h2 {
+  max-width: 780px;
+  margin: 0;
+  font-size: clamp(2.65rem, 4.5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -.045em;
+}
+
+.why-ordio-header > p {
+  max-width: 520px;
+  margin: 0 0 5px;
+  color: var(--text-on-dark-muted);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.why-ordio-list {
+  position: relative;
+  z-index: 1;
+  margin-top: 72px;
+  border-top: 1px solid rgba(255,255,255,.11);
+}
+
+.why-row {
+  display: grid;
+  grid-template-columns: 72px 60px minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
+  min-height: 170px;
+  padding: 28px 18px 28px 0;
+  border-bottom: 1px solid rgba(255,255,255,.11);
+  transition:
+    background-color 180ms ease,
+    padding-left 180ms var(--ease-standard);
+}
+
+.why-row:hover {
+  padding-left: 16px;
+  background: rgba(255,255,255,.025);
+}
+
+.why-number {
+  color: rgba(255,255,255,.32);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.why-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(36,201,214,.22);
+  border-radius: 50%;
+  background: rgba(36,201,214,.06);
+  color: var(--color-cyan-400);
+}
+
+.why-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.55;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.why-copy {
+  display: grid;
+  grid-template-columns: minmax(230px, .55fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(32px, 6vw, 90px);
+}
+
+.why-copy h3 {
+  margin: 0;
+  font-size: clamp(1.35rem, 1.8vw, 1.7rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -.027em;
+}
+
+.why-copy p {
+  max-width: 650px;
+  margin: 0;
+  color: var(--text-on-dark-muted);
+  font-size: 15px;
+  line-height: 1.72;
+}
+
+.why-row--highlight .why-icon {
+  border-color: rgba(247,214,56,.32);
+  background: rgba(247,214,56,.08);
+  color: var(--color-yellow-500);
+}
+
+.why-row--highlight .why-copy h3 {
+  color: var(--color-yellow-400);
+}
+
+.why-ordio-summary {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 17px;
+  margin-top: 42px;
+  color: rgba(255,255,255,.48);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.why-ordio-summary i {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(36,201,214,.72);
+}
+
+@media (max-width: 1050px) {
+  .why-ordio {
+    padding: 106px 0 98px;
+  }
+
+  .why-ordio-header {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .why-ordio-header > p {
+    max-width: 690px;
+  }
+
+  .why-ordio-list {
+    margin-top: 58px;
+  }
+
+  .why-row {
+    grid-template-columns: 58px 54px 1fr;
+  }
+
+  .why-copy {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .why-copy p {
+    max-width: 720px;
+  }
+
+  .why-ordio-summary {
+    overflow-x: auto;
+    justify-content: flex-start;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .why-ordio {
+    padding: 82px 0 76px;
+  }
+
+  .why-ordio-header h2 {
+    font-size: clamp(2.25rem, 10.7vw, 3.1rem);
+    line-height: 1.04;
+  }
+
+  .why-ordio-header > p {
+    font-size: 16px;
+    line-height: 1.68;
+  }
+
+  .why-ordio-list {
+    margin-top: 42px;
+  }
+
+  .why-row {
+    grid-template-columns: 44px 1fr;
+    min-height: 0;
+    gap: 14px;
+    padding: 26px 0;
+  }
+
+  .why-row:hover {
+    padding-left: 0;
+  }
+
+  .why-number {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    padding-top: 18px;
+  }
+
+  .why-icon {
+    grid-column: 2;
+    grid-row: 1;
+    width: 48px;
+    height: 48px;
+  }
+
+  .why-copy {
+    grid-column: 2;
+    grid-row: 2;
+    gap: 10px;
+  }
+
+  .why-copy h3 {
+    font-size: 1.32rem;
+  }
+
+  .why-copy p {
+    font-size: 15px;
+  }
+
+  .why-ordio-summary {
+    gap: 12px;
+    margin-top: 30px;
+    font-size: 9px;
+  }
+}
+
 .stage-anchor {
   min-height: 1px;
   scroll-margin-top: 80px;
